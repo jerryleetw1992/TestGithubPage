@@ -27,8 +27,8 @@ alt:background
   return (
     <div>            
       {props.content.map((content) => (
-        <div class="card">
-          <div class="card-body">
+        <div className="card">
+          <div className="card-body">
           <Img src={background}></Img>
             <Box p="1rem" color="grey">{content.email}</Box>      
           </div>
