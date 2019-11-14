@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
 import Proof from './proof/Proof';
@@ -14,16 +14,19 @@ function Main(props) {
     padding: 50px 0px 100px 0px;
   `
 
-  const [state, setState] = React.useState([]);
+  const [state, setState] = useState([]);
 
-  fetch(`http://localhost:5000/api/view/users?displayName=&email=${email}&isIssuer=`)
-  .then(res => res.json())
-  .then((returnData) => {
-    console.log('123');
-    setState(returnData.content)
-    console.log(`${returnData.content}`);
-  })
-  .catch(console.log);
+  async function fetchMyAPI() {
+    await fetch(`http://localhost:5000/api/view/users?displayName=&email=${email}&isIssuer=`)
+      .then(res => res.json())
+      .then((returnData) => { setState(returnData.content) })
+      .catch(console.log)
+  }
+
+  useEffect(() => {
+    fetchMyAPI();
+  },[]);
+  
 
   if (props.index == 0) {
     return (
