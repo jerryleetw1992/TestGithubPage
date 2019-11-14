@@ -11,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 const StyledTableCell = withStyles(theme => ({
     body: {
       fontSize: 14,
-      border: 200,
+      border: 0,
     },
   }))(TableCell);
   
