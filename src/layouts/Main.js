@@ -14,12 +14,12 @@ function Main(props) {
     padding: 50px 0px 100px 0px;
   `
 
-  const [state, setState] = useState([]);
+  const [state, setState] = useState({});
 
   async function fetchMyAPI() {
     await fetch(`http://localhost:5000/api/view/users?displayName=&email=${email}&isIssuer=`)
       .then(res => res.json())
-      .then((returnData) => { setState(returnData.content) })
+      .then((returnData) => { setState(returnData.content[0]) })
       .catch(console.log)
   }
 

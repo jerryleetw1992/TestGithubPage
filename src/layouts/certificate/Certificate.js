@@ -4,7 +4,7 @@ import background from '../../static/certificate.jpg';
 import { spacing, palette } from '@material-ui/system';
 
 
-function Certificats(props){
+function Main(props){
 
 const Box = styled.div`
 position:absolute; 
@@ -25,16 +25,14 @@ alt:background
 `
 
   return (
-    <div>            
-      {props.content.map((content) => (
-        <div className="card">
-          <div className="card-body">
+    <div>      
+      <div>
+          <div>
           <Img src={background}></Img>
-            <Box p="1rem" color="grey">{content.email}</Box>      
+            <Box p="1rem" color="grey">{props.content.email}</Box>      
           </div>
-        </div>
-      ))}
+        </div>     
     </div>
   )
 }
-export default Certificats
+export default Main
