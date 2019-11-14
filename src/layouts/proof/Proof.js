@@ -82,7 +82,7 @@ function Test() {
 
             <br/>
             <div>
-            <Cell title={'Blockchain'} rows={issuerRows} icon={blockchain} />
+            <Cell title={'Blockchain'} rows={blockchainRowss} icon={blockchain} />
             </div>
         </div>
 
