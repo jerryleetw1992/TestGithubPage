@@ -1,25 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+
+import CertificateIcon from '@material-ui/icons/CollectionsBookmark';
+import ProofsIcon from '@material-ui/icons/ImportContacts';
+import DownloadIcon from '@material-ui/icons/GetApp';
+
+import Main from './layouts/Main';
+
 
 function App() {
+  const [value, setValue] = React.useState(0);
+
+  const Root = styled.div`
+    background: rgb(244, 244, 244);
+  `
+
+
+  const Nav = styled.footer`
+    position: fixed;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom: 0%;
+    width: 100%;
+  `
+  const BNA = styled(BottomNavigationAction)`
+    width: 500px;
+  `
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Root>
+      <Main index={value}/>
+        <Nav>
+          <BottomNavigation
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            showLabels
+          >
+          <BNA label="CERTIFICATE" icon={<CertificateIcon />} />
+          <BNA label="PROOFS" icon={<ProofsIcon />} />
+          <BNA label="DOWNLOAD" icon={<DownloadIcon />} />
+        </BottomNavigation>
+      </Nav>
+    </Root>
   );
 }
 
