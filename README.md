@@ -12,17 +12,17 @@ Run the local host to make sure the verification web can call the local api.
 
 ## Task
 - Navigation bar
-[x] Lock on the bottom of the page
-[] When the width of the website is large, the navigation should be on the right side.
+    - [x] Lock on the bottom of the page
+    - [] When the width of the website is large, the navigation should be on the right side.
 
 - Certivicate view
-[x] Base RWD
-[] Mobile RWD
-[] The data text need to change line automatically.
+    - [x] Base RWD
+    - [] Mobile RWD
+    - [] The data text need to change line automatically.
 
 - Proofs view
-[x] Base RWD
-[] When the width of the website is large, the cell need to change to the side by side layout.
+    - [x] Base RWD
+    - [] When the width of the website is large, the cell need to change to the side by side layout.
 
 - Download view
 Not yet finished
