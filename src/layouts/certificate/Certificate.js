@@ -14,6 +14,12 @@ const Box = styled.div`
   top:500;
   right:500;
 `
+const Div = styled.div`
+border: 1px solid #000;
+background-image: url(${background});
+width: 2000px;
+height: 2000px;
+`
 
 const Img = styled.img`
   width: 1000px;
@@ -23,14 +29,15 @@ const Img = styled.img`
 `
 
   return (
-    <div>      
-      <div>
+    <Div>      
+      123
+      {/* <div>
           <div>
             <Img src={background}></Img>
             <Box p="1rem" color="grey">{props.content.email}</Box>      
           </div>
-        </div>     
-    </div>
+        </div>      */}
+    </Div>
   )
 }
 
