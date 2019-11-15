@@ -9,40 +9,37 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 const StyledTableCell = withStyles(theme => ({
-    body: {
-      fontSize: 14,
-      border: 0,
-    },
-  }))(TableCell);
+  body: {
+    fontSize: 14,
+    border: 0,
+  },
+}))(TableCell);
   
-  const StyledTableRow = withStyles(theme => ({
-    root: {
-      '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.background.default,
-      },
+const StyledTableRow = withStyles(theme => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.background.default,
     },
-  }))(TableRow);
+  },
+}))(TableRow);
+
+const PapaerS = styled(Paper)`
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform:translateX(-50%);
+  border-radius: 0px;
+`
+const Img = styled.img`
+  width: 25px;
+  height: 25px;
+  padding: 0px 10px 0px 5px;
+`
+const Body = styled.div`
+  padding: 5px 20px 20px 20px;
+`
 
 function Main(props) {
-
-    const PapaerS = styled(Paper)`
-      width: 90%;
-      position: relative;
-      left: 50%;
-      transform:translateX(-50%);
-      border-radius: 0px;
-    `
-
-    const Img = styled.img`
-      width: 25px;
-      height: 25px;
-      padding: 0px 10px 0px 5px;
-    `
-
-    const Body = styled.div`
-      padding: 5px 20px 20px 20px;
-    `
-
     return (
     <PapaerS>
       <Body>

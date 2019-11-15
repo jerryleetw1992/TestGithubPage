@@ -11,7 +11,7 @@ import checkbox from '../../static/check-square.svg';
 
 function createData(title, contnet) {
     return { title, contnet };
-  }
+}
   
 const issuerRows = [
     createData('Name:', 'ESCP Europe'),
@@ -43,8 +43,7 @@ const blockchainRowss = [
     createData('ABI:', " Gitlab"),
 ];
   
-function Test() {
-    const Title = styled.div`
+const Title = styled.div`
     position: relative;
     width: 90%;
     left: 50%;
@@ -53,13 +52,14 @@ function Test() {
     background: rgb(0, 94, 122);
     color: white;
     font-size: 30px;
-  `
-  const Img = styled.img`
-  width: 30px;
-  height: 30px;
-  padding: 0px 10px 0px 10px;
+`
+const Img = styled.img`
+    width: 30px;
+    height: 30px;
+    padding: 0px 10px 0px 10px;
 `
 
+function Main() {
     return (
         <div>
             <Title>
@@ -89,4 +89,4 @@ function Test() {
     );
 }
 
-export default Test;
+export default Main;

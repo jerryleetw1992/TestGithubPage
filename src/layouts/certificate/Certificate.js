@@ -5,19 +5,16 @@ import bottomRight from '../../static/certificate/certificateBottomRight.svg';
 import topRight from '../../static/certificate/certificateTopRight.svg';
 import textCenter from '../../static/certificate/certificateRightCenter.svg';
 
-function Main(props){
 
 const Root = styled.div`
   height: 100vh;
   width: 100vw;
 `
-
 const Top = styled.div`
   background: rgb(0, 0, 0);
   height: 80%;
   width: 100vw;
 `
-
 const TopLeft = styled.div`
   position: absolute;
   left: 0px;
@@ -39,7 +36,6 @@ const Bottom = styled.div`
   height: 10vh;
   width: 100vw;
 `
-
 const BottomRight = styled.img`
   position: absolute;
   height: 80%;
@@ -47,11 +43,12 @@ const BottomRight = styled.img`
   bottom: 0px;
 `
 
+function Main(props){
   return (
     <Root>
       <Top>
         <TopRight>
-          <img src={topRight}/>
+          <img src={topRight} alt="Top Right"/>
           <Center>
             <h3>
               {props.content.email}
@@ -59,11 +56,11 @@ const BottomRight = styled.img`
             <h3>
               {props.content.uid}
             </h3>
-            <img src={textCenter}/>
+            <img src={textCenter}  alt="Center"/>
           </Center>
         </TopRight>
         <TopLeft>
-          <img src={topLeft}/>
+          <img src={topLeft}  alt="Logo"/>
         </TopLeft>
       </Top>
       <Bottom>
