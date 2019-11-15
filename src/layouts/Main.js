@@ -22,8 +22,9 @@ function Main(props) {
   async function fetchMyAPI() {
     await fetch(`http://localhost:5000/api/view/users?displayName=&email=${email}&isIssuer=`)
       .then(res => res.json())
-      .then((returnData) => { setState(returnData.content[0]) 
-      console.log(returnData);
+      .then((returnData) => { 
+        setState(returnData.content[0]) 
+        console.log(returnData);
       })
       .catch(console.log)
   }
