@@ -30,9 +30,7 @@ function Main(props) {
 
   if (Number(props.index) === 0) {
     return (
-      <h1>
-          <Certificate content={state} />
-      </h1>
+      <Certificate content={state} />
     )
   } else if (Number(props.index) === 1) {
     return (
