@@ -20,26 +20,18 @@ const issuerRows = [
     createData('Blockchain Address:', "0xa4ed466ac0a65c68b0c48a0d2ed2c79efe271dd9"),
 ];
 
-const issuerVerifiedRowss = [
+const issuerVerifiedRows = [
     createData('Validator:', 'BCdiploma'),
     createData('Legal references:', "Blockchain Certified Data SAS - 104 avenue Albert 1er, 92500 Rueil-Malmaison FRANCE - contactus@bcdiploma.com - 833138951 RCS Nanterre"),
     createData('Website:', " https://www.BCdiploma.com"),
     createData('Blockchain Address:', "0x7332ea1229c11c627c10eb24c1a6f77bced1d5c1"),
 ];
 
-const dataRowss = [
+const dataRows = [
     createData('Certified on:', '2019-06-13T11:13:18Z'),
     createData('Certified data:', "N°2018618 Specialised Master (MS) Accredited by the Conférence des Grandes Écoles International Project Management This certificate is issued to Vincent LE GAL born on 1994-09-02 in Tarbes (65), France Awarded by the Board of Examiners of 2019-02-19 Paris, 2019-06-13 Gérard NAULLEAU Scientific Director ESCP Europe Frank BOURNOIS Executive President & Dean ESCP Europe A school of CCI PARIS ILE-DE-FRANCE"),
     createData('Template:', "Mastère Spécialisé"),
     createData('Template ID:', "7/0x01"),
-];
-
-const blockchainRowss = [
-    createData('Blockchain:', 'Ethereum (mainnet)'),
-    createData('Technical documentation:', "Repository"),
-    createData('Contract Address:', "0x90bb0b538253d279642439d5f54f336414ec06f7"),
-    createData('Transaction:', "0x062c85a25ca7c919bebe1eed10573a728590e56dc9a948d5c1ed129df606feac"),
-    createData('ABI:', " Gitlab"),
 ];
   
 const Title = styled.div`
@@ -71,11 +63,11 @@ function Main() {
             </div>
             <br/>
             <div>
-                <Cell title={'Holder'} rows={issuerVerifiedRowss} icon={user} />
+                <Cell title={'Holder'} rows={issuerVerifiedRows} icon={user} />
             </div>
             <br/>
             <div>
-                <Cell title={'IPFS'} rows={dataRowss} icon={blockchain} />
+                <Cell title={'IPFS'} rows={dataRows} icon={blockchain} />
             </div>
         </div>
 
