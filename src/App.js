@@ -13,9 +13,6 @@ import Main from './layouts/Main';
 
 const value= queryString.parse(window.location.search);
 const email=value.email;
-const issuer=value.issuer;
-const type=value.type;
-
 
 const Root = styled.div`
   background: rgb(244, 244, 244);
@@ -34,7 +31,6 @@ const BNA = styled(BottomNavigationAction)`
 function App() {
   const [value, setValue] = React.useState(0);
   const [data, setData] = useState({});
-  const [template, setTemplate] = useState({});
 
   async function fetchMyAPI() {
     await fetch(`http://localhost:5000/api/view/users?displayName=&email=${email}&isIssuer=`)
@@ -46,19 +42,8 @@ function App() {
       .catch(console.log)
   }
 
-  async function fetchTemplateAPI() {
-    await fetch(`http://localhost:5000/api/view/templates?issuer=${issuer}&type=${type}`)
-      .then(res => res.json())
-      .then((returnData) => { 
-        setTemplate(returnData.content) 
-        console.log(returnData.content.filePath);
-      })
-      .catch(console.log)
-  }
-
   useEffect(() => {
     fetchMyAPI();
-    fetchTemplateAPI();
   },[]);
 
   return (
