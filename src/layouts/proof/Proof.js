@@ -4,10 +4,10 @@ import queryString from 'query-string';
 
 import Cell from './ProofCell';
 
-import issuer from '../../static/issuer.svg';
-import user from '../../static/user.svg';
-import blockchain from '../../static/blockchain.svg';
-import checkbox from '../../static/check-square.svg';
+import issuerIcon from '../../static/issuer.svg';
+import userIcon from '../../static/user.svg';
+import blockchainIcon from '../../static/blockchain.svg';
+import checkboxIcon from '../../static/check-square.svg';
 
 
 const value = queryString.parse(window.location.search);
@@ -70,20 +70,20 @@ function Main() {
   return (
     <div>
         <Title>
-            <Img src={checkbox}/>
+            <Img src={checkboxIcon}/>
             CERTIFICATE VERIFICATION SUCCEED
         </Title>
         <br />
         <div>
-            <Cell title={'Issuer'} rows={issuerRows} icon={issuer}/>
+            <Cell title={'Issuer'} rows={issuerRows} icon={issuerIcon}/>
         </div>
         <br/>
         <div>
-            <Cell title={'Holder'} rows={holderRows} icon={user} />
+            <Cell title={'Holder'} rows={holderRows} icon={userIcon} />
         </div>
         <br/>
         <div>
-    	      <Cell title={'IPFS'} rows={ipfsRows} icon={blockchain} />
+    	      <Cell title={'IPFS'} rows={ipfsRows} icon={blockchainIcon} />
         </div>
     </div>
   );
