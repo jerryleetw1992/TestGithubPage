@@ -3,8 +3,7 @@ import Cell from './ProofCell';
 import styled from 'styled-components';
 
 import issuer from '../../static/issuer.svg';
-import lock from '../../static/lock.svg';
-import database from '../../static/database.svg';
+import user from '../../static/user.svg';
 import blockchain from '../../static/blockchain.svg';
 import checkbox from '../../static/check-square.svg';
 
@@ -64,25 +63,19 @@ function Main() {
         <div>
             <Title>
                 <Img src={checkbox}/>
-                    CERTIFICATE VERIFICATION SUCCEED
+                CERTIFICATE VERIFICATION SUCCEED
             </Title>
             <br />
             <div>
-            <Cell title={'Issuer'} rows={issuerRows} icon={issuer}/>
+                <Cell title={'Issuer'} rows={issuerRows} icon={issuer}/>
             </div>
             <br/>
             <div>
-            <Cell title={'Issuer verified by'} rows={issuerVerifiedRowss} icon={lock} />
+                <Cell title={'Holder'} rows={issuerVerifiedRowss} icon={user} />
             </div>
-
             <br/>
             <div>
-            <Cell title={'Data'} rows={dataRowss} icon={database} />
-            </div>
-
-            <br/>
-            <div>
-            <Cell title={'Blockchain'} rows={blockchainRowss} icon={blockchain} />
+                <Cell title={'IPFS'} rows={dataRowss} icon={blockchain} />
             </div>
         </div>
 
