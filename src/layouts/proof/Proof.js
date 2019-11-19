@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import queryString from 'query-string';
 
@@ -10,8 +10,8 @@ import blockchain from '../../static/blockchain.svg';
 import checkbox from '../../static/check-square.svg';
 
 
-const value= queryString.parse(window.location.search);
-const email=value.email;
+const value = queryString.parse(window.location.search);
+const email = value.email;
 
 function createData(title, contnet) {
   return { title, contnet };
@@ -25,14 +25,7 @@ const issuerRows = [
   createData('Blockchain Address:', "0xa4ed466ac0a65c68b0c48a0d2ed2c79efe271dd9"),
 ];
 
-const issuerVerifiedRows = [
-	createData('Validator:', 'BCdiploma'),
-  createData('Legal references:', "Blockchain Certified Data SAS - 104 avenue Albert 1er, 92500 Rueil-Malmaison FRANCE - contactus@bcdiploma.com - 833138951 RCS Nanterre"),
-  createData('Website:', " https://www.BCdiploma.com"),
-  createData('Blockchain Address:', "0x7332ea1229c11c627c10eb24c1a6f77bced1d5c1"),
-];
-
-const dataRows = [
+const ipfsRows = [
   createData('Certified on:', '2019-06-13T11:13:18Z'),
   createData('Certified data:', "N°2018618 Specialised Master (MS) Accredited by the Conférence des Grandes Écoles International Project Management This certificate is issued to Vincent LE GAL born on 1994-09-02 in Tarbes (65), France Awarded by the Board of Examiners of 2019-02-19 Paris, 2019-06-13 Gérard NAULLEAU Scientific Director ESCP Europe Frank BOURNOIS Executive President & Dean ESCP Europe A school of CCI PARIS ILE-DE-FRANCE"),
   createData('Template:', "Mastère Spécialisé"),
@@ -56,6 +49,24 @@ const Img = styled.img`
 `
 
 function Main() {
+	const [holderRows, setHolderRows] = React.useState([]);
+
+	async function fetchUserAPI() {
+    await fetch(`http://localhost:5000/api/view/users?email=${email}`)
+      .then(res => res.json())
+      .then((returnData) => { 
+				const name = returnData.content[0].displayName
+				const email = returnData.content[0].email
+        setHolderRows([...holderRows, createData('Name:', name), createData('Email:', email)]); 
+        console.log();
+      })
+      .catch(console.log)
+	}
+	
+	useEffect(() => {
+    fetchUserAPI();
+	},[]);
+	
   return (
     <div>
         <Title>
@@ -68,11 +79,11 @@ function Main() {
         </div>
         <br/>
         <div>
-            <Cell title={'Holder'} rows={issuerVerifiedRows} icon={user} />
+            <Cell title={'Holder'} rows={holderRows} icon={user} />
         </div>
         <br/>
         <div>
-    	      <Cell title={'IPFS'} rows={dataRows} icon={blockchain} />
+    	      <Cell title={'IPFS'} rows={ipfsRows} icon={blockchain} />
         </div>
     </div>
   );
