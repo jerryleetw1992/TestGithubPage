@@ -48,39 +48,40 @@ const Img = styled.img`
 `
 
 function Main() {
-	const [holderRows, setHolderRows] = React.useState([]);
-	const [issuerRows, setIssuerRows] = React.useState([]);
-	const [ipfsRows, setIpfsRows] = React.useState([]);
+	const [holderRows, setHolderRows] = useState([]);
+	const [issuerRows, setIssuerRows] = useState([]);
+	const [ipfsRows, setIpfsRows] = useState([]);
 
-	async function fetchUsersAPI() {
-    await fetch(`http://localhost:5000/api/view/users?email=${email}`)
-      .then(res => res.json())
-      .then((returnData) => { 
-				const name = returnData.content[0].displayName
-				const email = returnData.content[0].email
-        setHolderRows([...holderRows, createData('Name:', name), createData('Email:', email)]); 
-      })
-      .catch(console.log)
-	}
-
-	async function fetchCertsAPI() {
-    await fetch(`http://localhost:5000/api/view/certs?ipfs=${ipfs}`)
-      .then(res => res.json())
-      .then((returnData) => {
-				setIssuerRows([...issuerRows,
-											createData('Time:', timeConverter(returnData.content.timestamp)),
-											createData('Issuer Hash:', returnData.content.issuer),
-											createData('Issuer Name:', returnData.content.issuerName),
-											createData('Type:', returnData.content.type)]); 
-				setIpfsRows([...ipfsRows, createData('IPFS:', returnData.content.ipfs)]);
-      })
-      .catch(console.log)
-	}
-	
-	useEffect(() => {
-		fetchUsersAPI();
-		fetchCertsAPI();
-	},[]);
+  useEffect(() => {
+    async function fetchUsersAPI() {
+      await fetch(`http://localhost:5000/api/view/users?email=${email}`)
+        .then(res => res.json())
+        .then((returnData) => { 
+          const name = returnData.content[0].displayName
+          const email = returnData.content[0].email
+          setHolderRows(H => [...H, createData('Name:', name), createData('Email:', email)]); 
+        })
+        .catch(console.log)
+    };
+    fetchUsersAPI();
+  }, []);
+  
+  useEffect(() => {
+    async function fetchCertsAPI() {
+      await fetch(`http://localhost:5000/api/view/certs?ipfs=${ipfs}`)
+        .then(res => res.json())
+        .then((returnData) => {
+          setIssuerRows(I => [...I,
+                        createData('Time:', timeConverter(returnData.content.timestamp)),
+                        createData('Issuer Hash:', returnData.content.issuer),
+                        createData('Issuer Name:', returnData.content.issuerName),
+                        createData('Type:', returnData.content.type)]); 
+          setIpfsRows(I => [...I, createData('IPFS:', returnData.content.ipfs)]);
+        })
+        .catch(console.log)
+    };
+    fetchCertsAPI();
+  }, []);
 	
   return (
     <div>
