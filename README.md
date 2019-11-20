@@ -10,7 +10,7 @@ Run the local host to make sure the verification web can call the local api.
 1. Clone this repo
 2. `npm i`
 3. `npm start`
-4. Use the [http://localhost:3000/?email=georgetest@gmail.com](http://localhost:3000/?email=georgetest@gmail.com) to test.
+4. Use the [http://localhost:3000/?email=s099000304@g.ksu.edu.tw&ipfs=QmaxGGoMv6UGTktq2t79jZQSfswB1v8TCSyPs5UHGhxrTx](http://localhost:3000/?email=s099000304@g.ksu.edu.tw&ipfs=QmaxGGoMv6UGTktq2t79jZQSfswB1v8TCSyPs5UHGhxrTx) to test.
 
 ## Task
 - Navigation bar
