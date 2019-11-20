@@ -11,8 +11,9 @@ import DownloadIcon from '@material-ui/icons/GetApp';
 
 import Main from './layouts/Main';
 
-const value= queryString.parse(window.location.search);
-const email=value.email;
+const value = queryString.parse(window.location.search);
+const email = value.email;
+const ipfs = value.ipfs;
 
 const Root = styled.div`
   background: rgb(244, 244, 244);
@@ -53,7 +54,7 @@ function App() {
               if (Number(newValue) === 0 || Number(newValue) === 1) {
                 setValue(newValue);
               } else {
-                window.open("https://ipfs.io/ipfs/QmaxGGoMv6UGTktq2t79jZQSfswB1v8TCSyPs5UHGhxrTx")
+                window.open("https://ipfs.io/ipfs/"+ipfs)
               }
             }}
             showLabels
