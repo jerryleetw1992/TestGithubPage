@@ -53,7 +53,11 @@ function App() {
           <BottomNavigation
             value={value}
             onChange={(event, newValue) => {
-              setValue(newValue);
+              if (Number(newValue) === 0 || Number(newValue) === 1) {
+                setValue(newValue);
+              } else {
+                window.open("https://ipfs.io/ipfs/QmaxGGoMv6UGTktq2t79jZQSfswB1v8TCSyPs5UHGhxrTx")
+              }
             }}
             showLabels
           >
