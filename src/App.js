@@ -35,10 +35,7 @@ function App() {
   async function fetchMyAPI() {
     await fetch(`http://localhost:5000/api/view/users?displayName=&email=${email}&isIssuer=`)
       .then(res => res.json())
-      .then((returnData) => { 
-        setData(returnData.content[0]) 
-        console.log(returnData);
-      })
+      .then((returnData) => { setData(returnData.content[0]) })
       .catch(console.log)
   }
 
