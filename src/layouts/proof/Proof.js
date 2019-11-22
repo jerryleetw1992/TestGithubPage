@@ -73,7 +73,6 @@ function Main() {
         .then((returnData) => {
           setIssuerRows(I => [...I,
                         createData('Time:', timeConverter(returnData.content.timestamp)),
-                        createData('Issuer Hash:', returnData.content.issuer),
                         createData('Issuer Name:', returnData.content.issuerName),
                         createData('Type:', returnData.content.type)]); 
           setIpfsRows(I => [...I, createData('IPFS:', returnData.content.ipfs)]);
