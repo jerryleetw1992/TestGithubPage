@@ -24,6 +24,8 @@ const Nav = styled.footer`
   transform:translateX(-50%);
   bottom: 0%;
   width: 100%;
+  height: 60px;
+  background: white;
 `
 const BNA = styled(BottomNavigationAction)`
   width: 500px;

@@ -9,6 +9,7 @@ import textCenter from '../../static/certificate/certificateRightCenter.svg';
 const Root = styled.div`
   height: 100vh;
   width: 100vw;
+  background: white;
 `
 const Top = styled.div`
   background: rgb(0, 0, 0);
@@ -19,6 +20,11 @@ const TopLeft = styled.div`
   position: absolute;
   left: 0px;
   width: 40%;
+  @media (min-width: 1000px) {
+    position: absolute;
+    left: 0px;
+    width: 450px;
+  }
 `
 const TopRight = styled.div`
   position: absolute;
@@ -31,16 +37,19 @@ const Center = styled.div`
   text-align: center;
 `
 const Bottom = styled.div`
-  position: relative;
-  background: rgb(255, 255, 255);
-  height: 10vh;
+  position: fixed;
+  background: red;
+  height: 20%;
   width: 100vw;
+  bottom: 0px;
+  left: 0px;
 `
 const BottomRight = styled.img`
-  position: absolute;
-  height: 80%;
+  position: fixed;
+  height: 80px;
   right: 10px;
-  bottom: 0px;
+  bottom: 60px;
+  padding: 20px 10px;
 `
 
 function Main(props){
@@ -64,7 +73,7 @@ function Main(props){
         </TopLeft>
       </Top>
       <Bottom>
-      <BottomRight src={bottomRight}/>
+        <BottomRight src={bottomRight}/>
       </Bottom>
     </Root>    
   )
