@@ -16,14 +16,15 @@ const Top = styled.div`
   height: 80%;
   width: 100vw;
 `
-const TopLeft = styled.div`
+const GridImage = styled.img`
   position: absolute;
   left: 0px;
-  width: 40%;
-  @media (min-width: 1000px) {
+  width: 450px;
+  
+  @media (max-width: 1000px) {  
     position: absolute;
     left: 0px;
-    width: 450px;
+    width: 40%;
   }
 `
 const TopRight = styled.div`
@@ -68,9 +69,7 @@ function Main(props){
             <img src={textCenter}  alt="Center"/>
           </Center>
         </TopRight>
-        <TopLeft>
-          <img src={topLeft}  alt="Logo"/>
-        </TopLeft>
+        <GridImage src={topLeft} alt="Logo"/>
       </Top>
       <Bottom>
         <BottomRight src={bottomRight}/>
