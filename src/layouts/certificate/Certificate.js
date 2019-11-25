@@ -16,16 +16,25 @@ const Top = styled.div`
   height: 80%;
   width: 100%;
   background: black;
+  @media (max-height: 870px) {  
+    height: 700px
+  }
 `
 const GridImage = styled.img`
   position: absolute;
   left: 0px;
   width: 450px;
   
-  @media (max-width: 1000px) {  
+  @media (max-width: 1100px) {  
     position: absolute;
     left: 0px;
     width: 40%;
+  }
+  @media (max-width: 790px) {  
+    display: none;
+  }
+  @media (max-height: 870px) {  
+    height: 670px;
   }
 `
 const TopRight = styled.div`
@@ -34,25 +43,31 @@ const TopRight = styled.div`
   top: 0px;
   width: 800px;
   height: 100%;
-  @media (max-width: 1270px) {  
+  @media (max-width: 1260px) {  
     position: absolute;
     right: 0px;
-    top: 0px;
+    top: 50px;
     width: 600px;
     height: 100%;
   }
 `
 const TopRightTop = styled.div`
-  height: 20%;
+  height: 200px;
   background: black;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`
-const TopRightBottom = styled.div`
-  height: 80%;
-  text-align: center;
-  background: black;
+
+  @media (max-width: 1100px) {  
+    height: 200px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  @media (max-width: 1260px) {
+    height: 100px;
+  }
 `
 const TitleImage = styled.img`
   height: 90%;
@@ -66,25 +81,31 @@ const Info = styled.div`
   text-align: center;
   color: white;
   bottom: 200px;
+  z-index: 100;
+`
+const CenterImage = styled.img`
+  width: 100%;
+  @media (max-width: 600px) {
+    width: 60%;
+  }
 `
 const Text = styled.p`
   font-size: 25px;
+  @media (max-width: 600px) {
+    font-size: 15px;
+  }
 `
 const Bottom = styled.div`
   position: absolute;
   background: white;
-  height: 20%;
+  height: 200px;
   width: 100%;
   bottom: 0px;
   left: 0px;
-`
-const Nav = styled.div`
-  position: absolute;
-  background: purple;
-  height: 80px;
-  width: 100%;
-  bottom: 0px;
-  left: 0px;
+
+  @media (max-height: 870px) {
+    top: 700px;
+  }
 `
 const LogoDiv = styled.div`
   position: absolute;
@@ -110,13 +131,11 @@ function Main(props){
           <TopRightTop>
             <TitleImage src={topRight} alt="Top Right"/>
           </TopRightTop>
-          <TopRightBottom>
-            <Info>
+          <Info>
               <Text> {props.content.email} </Text>
               <Text> {props.content.uid} </Text>
-              <img src={textCenter} alt="Center"/>
+              <CenterImage src={textCenter} alt="Center"/>
             </Info>
-          </TopRightBottom>
         </TopRight>
         <GridImage src={topLeft} alt="Logo"/>
       </Top>
