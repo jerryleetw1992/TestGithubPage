@@ -15,7 +15,7 @@ function Main(props) {
   if (Number(props.index) === 0) {
     return (
       <CertificateBody>
-        <Certificate content={props.data} />
+        <Certificate />
       </CertificateBody>
     )
   } else if (Number(props.index) === 1) {

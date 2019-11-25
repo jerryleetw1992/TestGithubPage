@@ -33,22 +33,10 @@ const BNA = styled(BottomNavigationAction)`
 
 function App() {
   const [value, setValue] = React.useState(0);
-  const [data, setData] = useState({});
-
-  async function fetchMyAPI() {
-    await fetch(`http://localhost:5000/api/view/users?displayName=&email=${email}&isIssuer=`)
-      .then(res => res.json())
-      .then((returnData) => { setData(returnData.content[0]) })
-      .catch(console.log)
-  }
-
-  useEffect(() => {
-    fetchMyAPI();
-  },[]);
 
   return (
     <Root>
-      <Main index={value} data={data}/>
+      <Main index={value}/>
         <Nav>
           <BottomNavigation
             value={value}
