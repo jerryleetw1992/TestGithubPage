@@ -35,26 +35,7 @@ function App() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Root>
-      <Main index={value}/>
-        <Nav>
-          <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-              if (Number(newValue) === 0 || Number(newValue) === 1) {
-                setValue(newValue);
-              } else {
-                window.open("https://ipfs.io/ipfs/"+ipfs)
-              }
-            }}
-            showLabels
-          >
-          <BNA label="CERTIFICATE" icon={<CertificateIcon />} />
-          <BNA label="PROOFS" icon={<ProofsIcon />} />
-          <BNA label="DOWNLOAD" icon={<DownloadIcon />} />
-        </BottomNavigation>
-      </Nav>
-    </Root>
+    <Main/>
   );
 }
 
