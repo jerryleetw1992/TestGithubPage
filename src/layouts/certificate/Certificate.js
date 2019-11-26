@@ -28,16 +28,14 @@ function Main(props){
 
   if (IPFS !== "") {
     return (
-      <div width="100%" height="600px">
+      
       <Iframe url={"https://ipfs.io/ipfs/"+IPFS}
         width="100%"
         height="600px"
         id="myId"
         className="myClassname"
         display="initial"
-        position="relative"/>  
-
-      </div>  
+        position="relative"/> 
     )
   } else {
     return (
