@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Main from './layouts/Main';
 
 const Root = styled.div`
-  width: 1920px;
   height: 1080px;
   background: #fafafa;
 `
