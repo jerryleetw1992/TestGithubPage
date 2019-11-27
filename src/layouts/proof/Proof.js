@@ -31,6 +31,7 @@ const Root = styled.div`
   width: 480px;
   height: 100%;
   background: white;
+  display: inline-block;
 `
 const TitleBox = styled.div`
   position: relative;
