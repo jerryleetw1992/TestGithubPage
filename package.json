@@ -5,10 +5,13 @@
   "dependencies": {
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
+    "mgr-pdf-viewer-react": "^1.0.3",
+    "pdf-viewer-reactjs": "^2.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-iframe": "^1.8.0",
     "react-scripts": "3.2.0",
+    "reactjs-pdf-reader": "^1.0.9",
     "styled-components": "^5.0.0-rc.2"
   },
   "scripts": {

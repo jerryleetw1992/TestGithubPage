@@ -75,7 +75,7 @@ function Main() {
             holderName = {holderName}
             holderEmail = {holderEmail}
             ipfs = {IPFS}/>
-      <Certificate/>
+      <Certificate ipfs = {IPFS}/>
     </Root>
   );
 }
