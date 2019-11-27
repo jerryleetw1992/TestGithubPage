@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import './Proof.css'
-import certicheckDoneIcon from '../../static/icon-certicheck.svg';
-import hideIcon from '../../static/icon-hide.svg';
+import certicheckDoneIcon from '../../static/icons/icon-certicheck.svg';
+import hideIcon from '../../static/icons/icon-hide.svg';
 
 const Root = styled.div`
   width: 480px;

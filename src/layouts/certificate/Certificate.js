@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import PDFViewer from 'mgr-pdf-viewer-react';
 
 import './Certificate.css';
-import logoIcon from '../../static/logo-product-normal.svg';
-import shareIcon from '../../static/icon-share-grey.svg';
+import logoIcon from '../../static/icons/logo-product-normal.svg';
+import shareIcon from '../../static/icons/icon-share-grey.svg';
 
 const Root = styled.div`
   display: inline-block;
