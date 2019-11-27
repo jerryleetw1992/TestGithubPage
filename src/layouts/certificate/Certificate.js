@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PDFViewer from 'mgr-pdf-viewer-react';
 
+import './Certificate.css';
 import logoIcon from '../../static/logo-product-normal.svg';
 import shareIcon from '../../static/icon-share-grey.svg';
 

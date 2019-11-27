@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'SFCompactText';
+    font-weight: 'bold';
+    src: url('../../static/Fonts/SF-Compact-Text-Bold.otf');
+}
+@font-face {
+    font-family: 'SFCompactDisplay';
+    font-weight: 'Normal';
+    src: url('../../static/Fonts/SF-Compact-Display-Regular.otf');
+}
+@font-face {
+    font-family: 'PingFangSC';
+    src: url('../../static/Fonts/PingFang_SC_Regular.otf');
+}
+@font-face {
+    font-family: 'SFProText';
+    src: url('../../static/Fonts/FontsFree-Net-SFProText-Regular.ttf');
+}

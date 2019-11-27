@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import './Proof.css'
 import certicheckDoneIcon from '../../static/icon-certicheck.svg';
 import hideIcon from '../../static/icon-hide.svg';
 
