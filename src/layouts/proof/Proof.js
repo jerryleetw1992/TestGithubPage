@@ -1,31 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from 'react';
 import styled from 'styled-components';
 import queryString from 'query-string';
 
-import Cell from './ProofCell';
-
-import issuerIcon from '../../static/issuer.svg';
-import userIcon from '../../static/user.svg';
 import certicheckDoneIcon from '../../static/icon-certicheck.svg';
 import hideIcon from '../../static/icon-hide.svg';
-
-
-const value = queryString.parse(window.location.search);
-const email = value.email;
-const ipfs = value.ipfs;
-
-function timeConverter(UNIX_timestamp){
-  var a = new Date(UNIX_timestamp * 1000);
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var year = a.getFullYear();
-  var month = months[a.getMonth()];
-  var date = a.getDate();
-  var hour = a.getHours();
-  var min = a.getMinutes();
-  var sec = a.getSeconds();
-  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-  return time;
-}
 
 const Root = styled.div`
   width: 480px;
@@ -115,44 +93,7 @@ const InfoContent = styled.div`
   word-break:break-all;
 `
 
-function Main() {
-  const [date, setDate] = useState("-");
-  const [issuerName, setIssuerName] = useState("-");
-  const [type, setType] = useState("-");
-  const [holderName, setHolderName] = useState("-");
-  const [holderEmail, setEmail] = useState("-");
-  const [IPFS, setIPFS] = useState("-");
-
-  useEffect(() => {
-    async function fetchUsersAPI() {
-      await fetch(`http://localhost:5000/api/view/users?email=${email}`)
-        .then(res => res.json())
-        .then((returnData) => { 
-          const name = returnData.content[0].displayName;
-          const email = returnData.content[0].email;
-          setHolderName(name);
-          setEmail(email);
-        })
-        .catch(console.log)
-    };
-    fetchUsersAPI();
-  }, []);
-  
-  useEffect(() => {
-    async function fetchCertsAPI() {
-      await fetch(`http://localhost:5000/api/view/certs?ipfs=${ipfs}`)
-        .then(res => res.json())
-        .then((returnData) => {
-          setDate(timeConverter(returnData.content.timestamp));
-          setIssuerName(returnData.content.issuerName);
-          setType(returnData.content.type);
-          setIPFS(returnData.content.ipfs);
-        })
-        .catch(console.log)
-    };
-    fetchCertsAPI();
-  }, []);
-	
+function Main(props) {
   return (
     <Root>
       <TitleBox><Title>CERTIFICATION</Title></TitleBox>
@@ -169,19 +110,19 @@ function Main() {
       <Info>
         <InfoH1>ISSUER</InfoH1>
         <InfoH2>Date</InfoH2>
-        <InfoContent>{date}</InfoContent>
+        <InfoContent>{props.date}</InfoContent>
         <InfoH2>Name</InfoH2>
-        <InfoContent>{issuerName}</InfoContent>
+        <InfoContent>{props.issuerName}</InfoContent>
         <InfoH2>Type</InfoH2>
-        <InfoContent>{type}</InfoContent>
+        <InfoContent>{props.type}</InfoContent>
         <InfoH1>HOLDER</InfoH1>
         <InfoH2>Name</InfoH2>
-        <InfoContent>{holderName}</InfoContent>
+        <InfoContent>{props.holderName}</InfoContent>
         <InfoH2>E-mail</InfoH2>
-        <InfoContent>{holderEmail}</InfoContent>
+        <InfoContent>{props.holderEmail}</InfoContent>
         <InfoH1>IPFS</InfoH1>
         <InfoH2>IPFS</InfoH2>
-        <InfoContent>{IPFS}</InfoContent>
+        <InfoContent>{props.ipfs}</InfoContent>
       </Info>
     </Root>
   );
