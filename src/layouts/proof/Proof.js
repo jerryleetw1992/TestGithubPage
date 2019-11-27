@@ -99,11 +99,11 @@ function Main(props) {
       <TitleBox><Title>CERTIFICATION</Title></TitleBox>
       <Hide>
         <span>收起</span>
-        <img src={hideIcon}/>
+        <img src={hideIcon} alt=""/>
       </Hide>
       <Status>
         <Rectangle />
-        <img src={certicheckDoneIcon}/>
+        <img src={certicheckDoneIcon} alt=""/>
         <VSA>Verified Source Authenticity</VSA>
         <More>More</More>
       </Status>
