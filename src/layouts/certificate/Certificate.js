@@ -1,12 +1,10 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import Iframe from 'react-iframe'
 import PDFViewer from 'mgr-pdf-viewer-react';
 
 import logoIcon from '../../static/logo-product-normal.svg';
 import shareIcon from '../../static/icon-share-grey.svg';
-import sources from './Sources';
 
 const Root = styled.div`
   display: inline-block;
